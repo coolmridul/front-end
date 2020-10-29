@@ -1,0 +1,41 @@
+<div class="text-center mtop" *ngIf="!datapresent">
+  <p>Data Not Available</p>
+</div>
+<table class="table table-striped" *ngIf="datapresent">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">X</th>
+        <th scope="col">Y</th>
+        <th scope="col">Z Score</th>
+        <th scope="col">Beta</th>
+        <th scope="col">Intercept</th>
+        <th scope="col">Risk Ratio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries">
+        <td>{{country.id}}</td>
+        <th scope="row">{{ country.date }}</th>
+        <td>{{ country.stock_a }}</td>
+        <td>{{ country.stock_b  }}</td>
+        <td [ngStyle]="{'color': country.zscore < -2.5 ? 'green' : 'black'}">{{ country.zscore }}</td>
+        <td>{{ country.beta }}</td>
+        <td>{{ country.intercept  }}</td>
+        <td [ngStyle]="{'color': country.risk_ratio > 0.4 ? 'red' : 'black'}">{{ country.risk_ratio }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2" *ngIf="datapresent">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+      (pageChange)="refreshCountries(childMessage)">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries(childMessage)">
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="15">15 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+    </select>
+  </div>

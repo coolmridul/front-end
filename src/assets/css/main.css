@@ -1,0 +1,29 @@
+html {
+    font-size: 14px;
+}
+
+body{
+    opacity: 1;
+    background-color: #F1F5F8;
+}
+
+.navbar{
+    padding: 1rem;
+    min-height: 60px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.5);
+}
+
+main {
+    padding-top: 20px;
+}
+
+.container{
+    margin-left: 8rem;
+    margin-top: 3rem;
+    padding: 0;
+}
+
+.mtop {
+    margin-top: 40px;
+}
