@@ -1,8 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
 import { SharedServiceService } from '../../shared-service.service';
-
+import { NIFTYLIST1, NIFTYLIST2, NIFTYLIST3 } from './intraday.const';
 
 @Component({
   selector: 'app-intraday',
@@ -13,7 +12,7 @@ import { SharedServiceService } from '../../shared-service.service';
 export class IntradayComponent implements OnInit {
 
   tday;
-  stocklist;
+  stocklist = [];
   loading = false;
 
   myDate = new Date();
@@ -22,21 +21,29 @@ export class IntradayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.stocklist = [];
     this.listofstocks();
   }
 
-  listofstocks() {
+  listofstocks(): void {
+    this.commonFunction(NIFTYLIST1);
+    this.commonFunction(NIFTYLIST2);
+    this.commonFunction(NIFTYLIST3);
+    this.loading = false;
+  }
+
+  commonFunction(val): void {
     this.loading = true;
-    return this.api.IntradayGet().subscribe(data => {
-      this.loading = false;
+    this.api.IntradayGet({list : val}).subscribe(data => {
+      console.log(data);
       if (data.stocks.length === 0) {
         this.stocklist = ['Data not Available'];
       }
       else {
-
-        this.stocklist = data.stocks;
+        data.stocks.forEach(element => {
+          this.stocklist.push(element);
+        });
       }
-
     });
   }
 

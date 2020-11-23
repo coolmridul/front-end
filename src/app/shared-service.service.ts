@@ -26,8 +26,8 @@ export class SharedServiceService {
     return this.http.get<any>(apiUrls.pairtrade_getdata).pipe(catchError(this.handleError));
   }
 
-  IntradayGet() {
-    return this.http.get<any>(apiUrls.intraday).pipe(catchError(this.handleError));
+  IntradayGet(data) {
+    return this.http.post<any>(apiUrls.intraday, data).pipe(catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {
