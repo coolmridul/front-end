@@ -2,12 +2,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { GlobalConstant } from './common/globalconstant';
+import { environment } from '../environments/environment';
 
 
 const apiUrls = {
-  pairtrade_getdata : `${GlobalConstant.baseUrL}/get_data`,
-  intraday : `${GlobalConstant.baseUrL}/kicker`
+  pairtrade_getdata : `${environment.baseUrL}/get_data`,
+  intraday : `${environment.baseUrL}/kicker`,
+  pairtrade_trig : `${environment.baseUrL}`,
+
 };
 
 
@@ -29,6 +31,11 @@ export class SharedServiceService {
   IntradayGet(data) {
     return this.http.post<any>(apiUrls.intraday, data).pipe(catchError(this.handleError));
   }
+
+  TriggerPairTrade(data) {
+    return this.http.post<any>(apiUrls.pairtrade_trig, data).pipe(catchError(this.handleError));
+  }
+
 
   handleError(error: HttpErrorResponse) {
     return throwError(error);

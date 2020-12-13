@@ -13,6 +13,6 @@
 </div>
 <div *ngIf="!loading">
     <ul class="list-group" *ngFor="let a of stocklist">
-        <li class="list-group-item">{{a}}</li>
+        <li class="list-group-item">{{a['stock']}} : {{a['open']}}</li>
     </ul>
 </div>

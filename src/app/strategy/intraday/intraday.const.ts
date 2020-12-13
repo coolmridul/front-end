@@ -13,10 +13,7 @@ export const NIFTYLIST1 = [
     'TATASTEEL',
     'ONGC',
     'COALINDIA',
-    'M&M'
-];
-
-export const NIFTYLIST2 = [
+    'M&M',
     'IOC',
     'BHARTIARTL',
     'KOTAKBANK',
@@ -32,10 +29,7 @@ export const NIFTYLIST2 = [
     'ADANIPORTS',
     'JSWSTEEL',
     'CIPLA',
-    'DRREDDY'
-];
-
-export const NIFTYLIST3 = [
+    'DRREDDY',
     'RELIANCE',
     'GAIL',
     'DIVISLAB',

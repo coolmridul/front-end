@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrL : 'http://strategy-lb-1-1299453839.ap-south-1.elb.amazonaws.com/app'
+  // baseUrL: 'http://localhost:5000/app'
 };
 
 /*

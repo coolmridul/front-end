@@ -37,9 +37,9 @@ export class TableComponent implements OnInit {
           arr.push(element);
         }
       });
-      console.log(arr)
+      console.log(arr);
       this.collectionSize = arr.length;
-      this.countries = arr.map((country, i) => 
+      this.countries = arr.map((country, i) =>
       ({ id: i + 1, ...country })).slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
 
       if (this.countries.length !== 0) {
