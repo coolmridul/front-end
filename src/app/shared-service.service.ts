@@ -9,6 +9,7 @@ const apiUrls = {
   pairtrade_getdata : `${environment.baseUrL}/get_data`,
   intraday : `${environment.baseUrL}/kicker`,
   pairtrade_trig : `${environment.baseUrL}`,
+  intraday_bearish : `${environment.baseUrL}/kicker_bearish`
 
 };
 
@@ -17,10 +18,7 @@ const apiUrls = {
   providedIn: 'root'
 })
 export class SharedServiceService {
-
-
-
-
+  
   constructor(private http: HttpClient) { }
 
 
@@ -30,6 +28,10 @@ export class SharedServiceService {
 
   IntradayGet(data) {
     return this.http.post<any>(apiUrls.intraday, data).pipe(catchError(this.handleError));
+  }
+
+  BearishGet(data) {
+    return this.http.post<any>(apiUrls.intraday_bearish, data).pipe(catchError(this.handleError));
   }
 
   TriggerPairTrade(data) {

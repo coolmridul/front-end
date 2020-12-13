@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './strategy/pairtrade/components/table/table.component';
 import { IntradayComponent } from './strategy/intraday/intraday.component';
+import { BearishComponent } from './strategy/bearish/bearish.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { IntradayComponent } from './strategy/intraday/intraday.component';
     LandingComponent,
     PairtradeComponent,
     TableComponent,
-    IntradayComponent
+    IntradayComponent,
+    BearishComponent
   ],
   imports: [
     BrowserModule,

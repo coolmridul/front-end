@@ -1,15 +1,15 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { SharedServiceService } from '../../shared-service.service';
-import { NIFTYLIST1 } from './intraday.const';
+import { SharedServiceService } from 'src/app/shared-service.service';
+import { NIFTYLIST1 } from '../intraday/intraday.const';
 
 @Component({
-  selector: 'app-intraday',
-  templateUrl: './intraday.component.html',
-  styleUrls: ['./intraday.component.css'],
+  selector: 'app-bearish',
+  templateUrl: './bearish.component.html',
+  styleUrls: ['./bearish.component.css'],
   providers: [DatePipe]
 })
-export class IntradayComponent implements OnInit {
+export class BearishComponent implements OnInit {
 
   tday;
   stocklist = [];
@@ -34,7 +34,7 @@ export class IntradayComponent implements OnInit {
 
   commonFunction(val): void {
     this.loading = true;
-    this.api.IntradayGet({ list: val }).subscribe(data => {
+    this.api.BearishGet({ list: val }).subscribe(data => {
       if (data.open !== 'NA') {
         this.stocklist.push(data);
       }
