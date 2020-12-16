@@ -15,4 +15,7 @@
     <ul class="list-group" *ngFor="let a of stocklist">
         <li class="list-group-item">{{a['stock']}} : {{a['open']}}</li>
     </ul>
+    <ul class="list-group" *ngIf="stocklist.length === 0">
+        <li class="list-group-item">No Data </li>
+    </ul>
 </div>

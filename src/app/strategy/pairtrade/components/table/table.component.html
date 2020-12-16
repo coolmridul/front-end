@@ -12,6 +12,7 @@
         <th scope="col">Beta</th>
         <th scope="col">Intercept</th>
         <th scope="col">Risk Ratio</th>
+        <th scope="col">P-Value</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
         <td>{{ country.beta }}</td>
         <td>{{ country.intercept  }}</td>
         <td [ngStyle]="{'color': country.risk_ratio > 0.4 ? 'red' : 'black'}">{{ country.risk_ratio }}</td>
+        <td>{{ country.pvalue  }}</td>
       </tr>
     </tbody>
   </table>

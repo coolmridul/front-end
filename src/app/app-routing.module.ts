@@ -4,6 +4,7 @@ import { LandingComponent } from './common/landing/landing.component';
 import { PairtradeComponent } from './strategy/pairtrade/pairtrade.component';
 import { IntradayComponent } from './strategy/intraday/intraday.component';
 import { BearishComponent } from './strategy/bearish/bearish.component';
+import { EarningComponent } from './strategy/earning/earning.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'pairtrading', component: PairtradeComponent},
   { path: 'intraday', component: IntradayComponent},
   { path: 'bearish', component: BearishComponent},
+  { path: 'earning', component: EarningComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

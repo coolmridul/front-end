@@ -9,7 +9,9 @@ const apiUrls = {
   pairtrade_getdata : `${environment.baseUrL}/get_data`,
   intraday : `${environment.baseUrL}/kicker`,
   pairtrade_trig : `${environment.baseUrL}`,
-  intraday_bearish : `${environment.baseUrL}/kicker_bearish`
+  intraday_bearish : `${environment.baseUrL}/kicker_bearish`,
+  earnings : `${environment.baseUrL}/earning`
+
 
 };
 
@@ -33,6 +35,11 @@ export class SharedServiceService {
   BearishGet(data) {
     return this.http.post<any>(apiUrls.intraday_bearish, data).pipe(catchError(this.handleError));
   }
+
+  EarningPost(data) {
+    return this.http.post<any>(apiUrls.earnings, data).pipe(catchError(this.handleError));
+  }
+
 
   TriggerPairTrade(data) {
     return this.http.post<any>(apiUrls.pairtrade_trig, data).pipe(catchError(this.handleError));

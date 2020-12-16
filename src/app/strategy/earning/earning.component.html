@@ -1,0 +1,13 @@
+<div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Intraday</h2>
+            <p> Stocks to buy for {{tday}}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <ul class="list-group" *ngFor="let a of stocklist">
+        <li class="list-group-item">{{a['value']}}</li>
+    </ul>
+</div>

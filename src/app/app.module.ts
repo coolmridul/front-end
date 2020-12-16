@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './strategy/pairtrade/components/table/table.component';
 import { IntradayComponent } from './strategy/intraday/intraday.component';
 import { BearishComponent } from './strategy/bearish/bearish.component';
+import { EarningComponent } from './strategy/earning/earning.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BearishComponent } from './strategy/bearish/bearish.component';
     PairtradeComponent,
     TableComponent,
     IntradayComponent,
-    BearishComponent
+    BearishComponent,
+    EarningComponent
   ],
   imports: [
     BrowserModule,
