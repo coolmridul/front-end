@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SharedServiceService } from '../../../app/shared-service.service';
-import { NIFTYLIST1 } from '../intraday/intraday.const';
+import { NIFTYLIST2 } from '../intraday/intraday.const';
 
 @Component({
   selector: 'app-earning',
@@ -19,14 +19,14 @@ export class EarningComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stocklist = [];
     this.listofstocks();
   }
 
   listofstocks(): void {
     this.stocklist = [];
-    for (let i = 0; i <= NIFTYLIST1.length; i++) {
-      this.commonFunction(NIFTYLIST1[i]);
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < NIFTYLIST2.length; i++) {
+      this.commonFunction(NIFTYLIST2[i]);
     }
   }
 

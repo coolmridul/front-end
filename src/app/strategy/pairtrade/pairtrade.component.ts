@@ -48,7 +48,9 @@ export class PairtradeComponent implements OnInit {
           sb: list[j],
           sector: listname
         };
-        this.callApi(obj);
+        setTimeout (() => {
+          this.callApi(obj);
+       }, 500);
       }
     }
   }
