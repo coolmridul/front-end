@@ -32,7 +32,10 @@ export class EarningComponent implements OnInit {
 
   commonFunction(val): void {
     this.api.EarningPost({ list: val }).subscribe(data => {
-        this.stocklist.push(data);
+
+      if (data.pv !== 'NA') {
+          this.stocklist.push(data);
+        }
     });
   }
 

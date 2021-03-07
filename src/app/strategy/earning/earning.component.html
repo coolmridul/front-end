@@ -8,6 +8,10 @@
 </div>
 <div>
     <ul class="list-group" *ngFor="let a of stocklist">
-        <li class="list-group-item">Value : {{a['value']}}   Ratio: {{a['pv']}}</li>
+        <li class="list-group-item">
+            <div> Company : {{ a['comp'] }}</div>
+            <div> Value : {{a['value']}} </div>
+            <div>Ratio: {{a['pv']}}</div>
+        </li>
     </ul>
 </div>
