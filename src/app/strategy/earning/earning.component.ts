@@ -26,7 +26,9 @@ export class EarningComponent implements OnInit {
     this.stocklist = [];
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < NIFTYLIST2.length; i++) {
-      this.commonFunction(NIFTYLIST2[i]);
+      setTimeout (() => {
+        this.commonFunction(NIFTYLIST2[i]);
+     }, 2000);
     }
   }
 
@@ -37,6 +39,10 @@ export class EarningComponent implements OnInit {
           this.stocklist.push(data);
         }
     });
+  }
+
+  abc() {
+    this.api.DownloadFile(this.stocklist, 'Earnings');
   }
 
 }

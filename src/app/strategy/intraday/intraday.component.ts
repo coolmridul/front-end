@@ -41,4 +41,8 @@ export class IntradayComponent implements OnInit {
     });
   }
 
+  abc() {
+    this.api.DownloadFile(this.stocklist, 'IntraDay');
+  }
+
 }

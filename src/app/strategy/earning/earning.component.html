@@ -4,6 +4,9 @@
             <h2>EPS</h2>
             <p> Stocks to buy for {{tday}}</p>
         </div>
+        <div class="col-offset-md-3">
+            <button class="btn btn-primary" type="button" (click)="abc()">Click me to download</button>
+        </div>
     </div>
 </div>
 <div>
@@ -12,6 +15,9 @@
             <div> Company : {{ a['comp'] }}</div>
             <div> Value : {{a['value']}} </div>
             <div>Ratio: {{a['pv']}}</div>
+            <div>Avg PE: {{a['average_pe'] }} </div>
+            <div>Double SD: {{a['double_sd'] }} </div>
+            <div>EPS zero? : {{ a['eps_zero'] }}</div>
         </li>
     </ul>
 </div>

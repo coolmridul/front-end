@@ -41,4 +41,8 @@ export class BearishComponent implements OnInit {
     });
   }
 
+  abc() {
+    this.api.DownloadFile(this.stocklist, 'IntraDay');
+  }
+
 }
