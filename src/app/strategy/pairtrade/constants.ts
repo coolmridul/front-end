@@ -61,7 +61,6 @@ export const NIFTYFMCG = [
     'DABUR',
     'JUBLFOOD',
     'HINDUNILVR',
-    'MARICO',
     'COLPAL',
     'TATACONSUM',
     'GODREJCP',

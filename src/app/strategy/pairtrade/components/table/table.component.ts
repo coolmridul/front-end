@@ -10,7 +10,7 @@ export class TableComponent implements OnInit {
 
   @Input() childMessage: string;
 
-  datapresent: boolean = false;
+  datapresent = false;
   page = 1;
   pageSize = 10;
   collectionSize;

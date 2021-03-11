@@ -57,7 +57,6 @@ export const NIFTYLIST2 = [
     'SHREECEM',
     'BAJAJFINSV',
     'BPCL',
-    'TATASTEEL',
     'ONGC',
     'COALINDIA',
     'M&M',
